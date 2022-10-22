@@ -4,34 +4,34 @@ Part - 1:
 =======
 Create a sample website using docker container
 
-``docker run -p 8080:80 nginx:latest``
+             docker run -p 8080:80 nginx:latest
 
-``docker cp index.html [container-id]:/usr/share/nginx/html/``
+             docker cp index.html [container-id]:/usr/share/nginx/html/
 
-``docker commit [container-id] cad/web:version1``
+             docker commit [container-id] cad/web:version1
 
-``docker tag cad/web:version1 us.gcr.io/youtube-demo-255723/cad-site:version1``
+             docker tag cad/web:version1 us.gcr.io/youtube-demo-255723/cad-site:version1
 
-``docker push us.gcr.io/youtube-demo-255723/cad-site:version1``
+             docker push us.gcr.io/youtube-demo-255723/cad-site:version1
 
 PART - 2
 =======
 Deploying container in GKE cluster
 
-``gcloud config set project youtube-demo-255723``
- ``gcloud config set compute/zone us-central1-a``
+             gcloud config set project youtube-demo-255723
+             gcloud config set compute/zone us-central1-a
 
 Creating a GKE cluster
 
- ``gcloud container clusters create gk-cluster --num-nodes=1``
+             gcloud container clusters create gk-cluster --num-nodes=1
  
- ``gcloud container clusters get-credentials gk-cluster``
+             gcloud container clusters get-credentials gk-cluster
  
   This command configures kubectl to use the cluster you created.
 
 Deploying an application to the cluster:
 
-             ``kubectl create deployment web-server --image=us.gcr.io/youtube-demo-255723/cad-site:version1``
+             kubectl create deployment web-server --image=us.gcr.io/youtube-demo-255723/cad-site:version1
 
 Exposing the Deployment:
 
