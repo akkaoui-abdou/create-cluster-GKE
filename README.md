@@ -53,7 +53,7 @@ Deploying an application to the cluster:
 
 Exposing the Deployment:
 
- ``kubectl expose deployment web-server --type LoadBalancer --port 80 --target-port 80``
+            kubectl expose deployment web-server --type LoadBalancer --port 80 --target-port 80
 
 Inspecting and viewing the application
  1. Inspect the running Pods by using
