@@ -4,6 +4,8 @@ Part - 1:
 =======
 Create a sample website using docker container
 
+             export PROJECT_ID = kubernetes-366320
+
              docker run -p 8080:80 nginx:latest
 
              docker cp index.html [container-id]:/usr/share/nginx/html/
@@ -14,16 +16,16 @@ Create a new image from a containe:
              
 Create a tag for the image:
 
-             docker tag abdel/nginx-web:version1 us.gcr.io/PROJECT_ID/nginx-web:version1
+             docker tag abdel/nginx-web:version1 us.gcr.io/$PROJECT_ID/nginx-web:version1
              
 Create image in the registry (us.gcr.io):
 
-             docker push us.gcr.io/PROJECT_ID/nginx-web:version1
+             docker push us.gcr.io/$PROJECT_ID/nginx-web:version1
 
 PART - 2
 =======
 Deploying container in GKE cluster
-             export PROJECT_ID = kubernetes-366320
+
              gcloud config set project $PROJECT_ID
              gcloud config set compute/zone us-central1-a
 
@@ -35,15 +37,15 @@ Creating a GKE cluster
  
             gcloud auth configure-docker
 
-             gcloud container clusters create gk-cluster --num-nodes=1
+             gcloud container clusters create abdel-cluster --num-nodes=1
  
-             gcloud container clusters get-credentials gk-cluster
+             gcloud container clusters get-credentials abdel-cluster
  
   This command configures kubectl to use the cluster you created.
 
 Deploying an application to the cluster:
 
-             kubectl create deployment web-server --image=us.gcr.io/youtube-demo-255723/cad-site:version1
+             kubectl create deployment web-server --image=us.gcr.io/$PROJECT_ID/nginx-web:version1
 
 Exposing the Deployment:
 
