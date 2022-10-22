@@ -44,7 +44,7 @@ Creating a GKE cluster
 
             gcloud container clusters create abdel-cluster --num-nodes=1
             
----
+--
  
             gcloud container clusters get-credentials abdel-cluster
  
