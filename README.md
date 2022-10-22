@@ -33,15 +33,16 @@ Creating a GKE cluster
 
             gcloud services list --available
  
- 
+ --
             gcloud services enable containerregistry.googleapis.com
  
- 
+ --
             gcloud auth configure-docker
 
-
+--
             gcloud container clusters create abdel-cluster --num-nodes=1
- 
+            
+---
  
             gcloud container clusters get-credentials abdel-cluster
  
