@@ -16,17 +16,17 @@ Create a new image from a containe:
              
 Create a tag for the image:
 
-             docker tag abdel/nginx-web:version1 us.gcr.io/$PROJECT_ID/nginx-web:version1
+             docker tag abdel/nginx-web:version1 us.gcr.io/${PROJECT_ID}/nginx-web:version1
              
 Create image in the registry (us.gcr.io):
 
-             docker push us.gcr.io/$PROJECT_ID/nginx-web:version1
+             docker push us.gcr.io/${PROJECT_ID}/nginx-web:version1
 
 PART - 2
 =======
 Deploying container in GKE cluster
 
-             gcloud config set project $PROJECT_ID
+             gcloud config set project ${PROJECT_ID}
              gcloud config set compute/zone us-central1-a
 
 Creating a GKE cluster
@@ -45,7 +45,7 @@ Creating a GKE cluster
 
 Deploying an application to the cluster:
 
-             kubectl create deployment web-server --image=us.gcr.io/$PROJECT_ID/nginx-web:version1
+             kubectl create deployment web-server --image=us.gcr.io/${PROJECT_ID}/nginx-web:version1
 
 Exposing the Deployment:
 
