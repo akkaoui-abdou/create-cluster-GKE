@@ -34,6 +34,7 @@ Creating a GKE cluster
             gcloud services list --available
  
  --
+ 
             gcloud services enable containerregistry.googleapis.com
  
  --
