@@ -31,7 +31,7 @@ Creating a GKE cluster
 
 Deploying an application to the cluster:
 
- ``kubectl create deployment web-server --image=us.gcr.io/youtube-demo-255723/cad-site:version1``
+             ``kubectl create deployment web-server --image=us.gcr.io/youtube-demo-255723/cad-site:version1``
 
 Exposing the Deployment:
 
