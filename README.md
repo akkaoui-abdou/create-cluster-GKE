@@ -59,7 +59,7 @@ Inspecting and viewing the application
  1. Inspect the running Pods by using
  
             kubectl get pods
- 2. Inspect the hello-server Service by using 
+ 2. Inspect the web-server Service by using 
  
              kubectl get service
 
